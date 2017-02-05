@@ -10,7 +10,10 @@ import json
 import os
 import time
 from optparse import OptionParser
+import sys
+import io
 
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 def log(text):
     s = '[%s] %s' % (str(datetime.now()), text)
